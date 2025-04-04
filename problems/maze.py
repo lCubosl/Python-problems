@@ -1,3 +1,8 @@
+# KEY Takeaways
+# 1.Define subproblem
+# 2.what is the base case
+# 3.find recursive formula for general solution
+
 # solution(1,1) = 1
 # (n,m) = solution(n-1,m) + solution(n,m-1)
 
