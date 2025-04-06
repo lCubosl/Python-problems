@@ -5,7 +5,7 @@
 # 2. open brackets must be closed in order
 # 3. every close bracket has a corresponding open bracket of the same type
 
-s = "([)[]{}"
+s = "([])[]{}"
 p_map = {
   ")":"(",
   "}":"{",
