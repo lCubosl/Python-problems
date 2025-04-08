@@ -16,11 +16,21 @@ for num in Input:
     memo[num] = 1
 
 for key, val in memo.items():
+  item = (-val, key)
   if len(heap) < k:
-    heapq.heappush(heap, (val, key))
+    heapq.heappush(heap, item)
   else:
-    heapq.heappushpop(heap, (val, key))
+    heapq.heappushpop(heap, item)
 
-print([h[1] for  h in heap])
+print([h[1] for h in heap])
+
+# alternative heap
+# for key, val in memo.items():
+#   item = (-val,  key)
+#   print(item)
+#   heapq.heappush(heap, item)
+
+# result = [heapq.heappop(heap)[1] for _ in range(k)]
+# print(result)
 
 # time complex O(n) down bellow

@@ -13,7 +13,7 @@ k = 1
 memo = {}
 heap = []
 
-for idx, n in enumerate(Input):
+for n in enumerate(Input):
   if n in memo:
     memo[n] +=  1
   else:
@@ -24,7 +24,6 @@ print("memo: ",memo)
 for key, val in memo.items():
   item = (-val,  key)
   print(item)
-  
   heapq.heappush(heap, item)
 
 result = [heapq.heappop(heap)[1] for _ in range(k)]
