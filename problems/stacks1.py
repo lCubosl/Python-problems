@@ -23,9 +23,11 @@ def isValid():
         return False
     else:
       stack.append(bracket)
+      print(stack)
   if stack:
     return False
   else:
     return True
+
   
 print(isValid())
