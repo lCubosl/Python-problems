@@ -20,7 +20,7 @@ class Solution:
           numStack.append(temp1 * temp2)
           print(temp1, temp2, val)
         elif val == "/":
-          numStack.append(int(temp1 / temp2))
+          numStack.append(int(temp1 / float(temp2)))
           print(temp1, temp2, val)
 
     return numStack[0]
