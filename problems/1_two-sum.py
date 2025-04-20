@@ -8,7 +8,7 @@ class Solution():
       diff = target - num
       if diff in seen:
         return[seen[diff], i]
-      seen[num] = 1
+      seen[num] = i
   
 solution = Solution()
 print(solution.twoSum(nums = [2,7,11,15], target = 9))
