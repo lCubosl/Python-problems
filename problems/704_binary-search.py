@@ -1,5 +1,6 @@
 # 704. Binary Search
 
+# Binary search tree (iterative)
 class Solution():
   def search(self, nums, target):
     l, r = 0, len(nums) - 1
