@@ -1,36 +1,35 @@
 # Given an integer array nums and an integer k, return the k most frequent elements. 
 # You may return the answer in any order.
 
-# time complex O(n * log k)
-import heapq
+# bucket sort O(n)
+class Solution(object):
+  def topKFrequent1(self, nums, k):
+    seen = {}
+    freq = [[] for i in range(len(nums) + 1)]
 
-Input = [1,1,5,1,2,2,3,4,5,6,7,5,4,5,2,2]
-k = 2
-memo = {}
-heap = []
+    for num in nums:
+      seen[num] = 1 + seen.get(num, 0)
+    for num, cnt in seen.items():
+      freq[cnt].append(num)
 
-for num in Input:
-  if num in memo:
-    memo[num] += 1
-  else:
-    memo[num] = 1
+    res = []
+    for i in range(len(freq) - 1, 0, -1):
+      for num in freq[i]:
+        res.append(num)
+        if len(res) == k:
+          return res
 
-for key, val in memo.items():
-  item = (-val, key)
-  if len(heap) < k:
-    heapq.heappush(heap, item)
-  else:
-    heapq.heappushpop(heap, item)
+solution = Solution()
+print(solution.topKFrequent1(nums = [1,1,1,2,2,3], k = 2))
+print(solution.topKFrequent1(nums = [1], k = 1))
+print("---------------------------------------")
 
-print([h[1] for h in heap])
+# sorting time: O(nlogn)
+class Solution(object):
+  def topKFrequent2(self, nums, k):
+    pass
 
-# alternative heap
-# for key, val in memo.items():
-#   item = (-val,  key)
-#   print(item)
-#   heapq.heappush(heap, item)
-
-# result = [heapq.heappop(heap)[1] for _ in range(k)]
-# print(result)
-
-# time complex O(n) down bellow
+solution = Solution()
+print(solution.topKFrequent2(nums = [1,1,1,2,2,3], k = 2))
+print(solution.topKFrequent2(nums = [1], k = 1))
+print("---------------------------------------")
