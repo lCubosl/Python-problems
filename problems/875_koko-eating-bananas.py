@@ -1,7 +1,7 @@
 # 875. Koko Eating Bananas
 import math
 
-
+# binary search treef
 class Solution():
   def minEatingSpeed(self, piles, h):
     l, r = 1, max(piles)
