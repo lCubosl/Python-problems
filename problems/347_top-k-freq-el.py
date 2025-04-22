@@ -27,7 +27,21 @@ print("---------------------------------------")
 # sorting time: O(nlogn)
 class Solution(object):
   def topKFrequent2(self, nums, k):
-    pass
+    count = {}
+
+    for num in nums:
+      count[num] = 1 + count.get(num, 0)
+    
+    arr = []
+    for num, cnt in count.items():
+      arr.append([cnt, num])
+    arr.sort()      
+
+    result = []
+    while len(result) < k:
+      result.append(arr.pop()[1]) 
+
+    return result
 
 solution = Solution()
 print(solution.topKFrequent2(nums = [1,1,1,2,2,3], k = 2))
