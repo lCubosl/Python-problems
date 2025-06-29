@@ -78,6 +78,8 @@ class Solution():
       return False
 
     for i in set(s):
+      print("s count:", s.count(i))
+      print("t count:", t.count(i))
       if s.count(i) != t.count(i):
         return False
     
