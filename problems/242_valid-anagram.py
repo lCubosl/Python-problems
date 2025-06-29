@@ -71,3 +71,19 @@ solution = Solution()
 print("Expected: true, Output: ", solution.isAnagram4(s = "anagram", t = "nagaram"))
 print("Expected: false, Output: ", solution.isAnagram4(s = "rat", t = "car"))
 print("---------------------------------------")
+
+class Solution():
+  def isAnagram4(self, s, t):
+    if len(s) != len(t):
+      return False
+
+    for i in set(s):
+      if s.count(i) != t.count(i):
+        return False
+    
+    return True
+
+solution = Solution()
+print("Expected: true, Output: ", solution.isAnagram4(s = "anagram", t = "nagaram"))
+print("Expected: false, Output: ", solution.isAnagram4(s = "rat", t = "car"))
+print("---------------------------------------")
