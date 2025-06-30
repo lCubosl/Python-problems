@@ -27,11 +27,8 @@ class Solution(object):
     if stack:
       return False
     else:
-      return True 
-    
+      return True  
           
-
-
 solution = Solution()
 print(solution.isValid(s = "()"))
 print(solution.isValid(s = "()[]{}"))
