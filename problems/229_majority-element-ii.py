@@ -9,8 +9,19 @@ class Solution(object):
         freq[num] = 1
 
     sort_by_key = dict(sorted(freq.items(), key=lambda item: item[1], reverse=True))     
+    
+    max_freq = None
+    res = []
 
-    return sort_by_key
+    for key, val in sort_by_key.items():
+      if max_freq is None:
+        max_freq = val
+      if val == max_freq:
+        res.append(key)
+      else:
+        break
+
+    return res
 
 
 solution = Solution()
