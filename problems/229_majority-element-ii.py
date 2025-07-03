@@ -9,18 +9,14 @@ class Solution(object):
         freq[num] = 1
 
     sort_by_key = dict(sorted(freq.items(), key=lambda item: item[1], reverse=True))     
-    
-    max_freq = None
+
     res = []
+    # majority element that is appended to the list must be greater than n//3
 
     for key, val in sort_by_key.items():
-      if max_freq is None:
-        max_freq = val
-      if val == max_freq:
+      if val > len(nums)//3:
         res.append(key)
-      else:
-        break
-
+      
     return res
 
 
