@@ -9,19 +9,7 @@ s = "LRRRLLRLRL"
 Output = 6
 
 def longestBalancedSubstring(s: str) -> int:
-  prefix_sum = 0
-  first_seen = {0: -1}
-  max_len = 0
-
-  for i, ch in enumerate(s):
-      prefix_sum += 1 if ch == 'R' else -1
-
-      if prefix_sum in first_seen:
-          max_len = max(max_len, i - first_seen[prefix_sum])
-      else:
-          first_seen[prefix_sum] = i
-
-  return max_len
+  pass
 
 
 print(longestBalancedSubstring("LRRRLLRLRL"))  # ➜ 6
