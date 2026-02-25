@@ -23,3 +23,23 @@ def removeDupe(nums1):
 
 print(removeDupe(nums))
 
+class Solution(object):
+    def removeDupe(self, nums):
+        if not nums:
+            return 0
+
+        write = 1
+
+        for read in range(1, len(nums)):
+            if nums[read] != nums[read - 1]:
+                nums[write] = nums[read]
+                write += 1
+
+        return write
+    
+nums = [0,0,1,1,1,2,2,3,3,4]
+s = Solution()
+k = s.removeDupe(nums)
+
+print("k =", k)
+print("modified:", nums[:k])
