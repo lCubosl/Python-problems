@@ -1,14 +1,42 @@
-#27 Remove element
+class Solution(object):
+    def removeElement(self, nums, val):
+        write = 0
+        
+        for read in range(len(nums)):
+            if nums[read] != val:
+                nums[write] = nums[read]
+                write += 1
+                
+        return write
+    
 nums = [3,2,2,3]
 val = 3
-def removeElement(nums, val):
-  p1 = 0
-  for p2 in range(len(nums)):
-    if nums[p2] != val:
-      nums[p1] = nums[p2]
-      p1 += 1
 
-  return nums, p1
+s = Solution()
+k = s.removeElement(nums, val)
 
+print("k =", k)
+print("modified array =", nums[:k])
 
-print(removeElement(nums, val))
+class Solution(object):
+    def removeElement(self, nums, val):
+        i = 0
+        n = len(nums)
+        
+        while i < n:
+            if nums[i] == val:
+                nums.pop(i)
+                n -= 1
+            else:
+                i += 1
+                
+        return n
+    
+nums = [0,1,2,2,3,0,4,2]
+val = 2
+
+s = Solution()
+k = s.removeElement(nums, val)
+
+print("k =", k)
+print("modified array =", nums[:k])
